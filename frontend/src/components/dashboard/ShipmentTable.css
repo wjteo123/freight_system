@@ -1,0 +1,123 @@
+.shipment-table {
+  margin-top: 24px;
+  background: var(--panel-gradient);
+  border-radius: 22px;
+  padding: 22px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.section-tag {
+  margin: 0;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(15, 20, 25, 0.08);
+}
+
+td {
+  padding: 14px 8px;
+  border-bottom: 1px solid rgba(15, 20, 25, 0.05);
+  font-weight: 500;
+  color: var(--deep-blue);
+}
+
+.route-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.route-arrow {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pill--pending {
+  background: rgba(245, 165, 36, 0.18);
+  color: #b46a04;
+}
+
+.pill--picked {
+  background: rgba(67, 196, 176, 0.18);
+  color: #1f7e72;
+}
+
+.pill--transit {
+  background: rgba(26, 115, 232, 0.16);
+  color: #1a73e8;
+}
+
+.pill--delivered {
+  background: rgba(76, 175, 80, 0.18);
+  color: #2e7d32;
+}
+
+.doc-chip {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--deep-blue);
+  background: rgba(15, 20, 25, 0.04);
+}
+
+.doc-chip--pdf {
+  border-color: rgba(184, 46, 37, 0.4);
+  color: #b82e25;
+  background: rgba(184, 46, 37, 0.08);
+}
+
+.doc-chip--img {
+  border-color: rgba(26, 115, 232, 0.35);
+  color: #1a73e8;
+  background: rgba(26, 115, 232, 0.08);
+}
+
+.doc-chip--empty {
+  color: var(--text-muted);
+  border: 1px dashed rgba(15, 20, 25, 0.15);
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .shipment-table {
+    padding: 20px;
+    overflow-x: auto;
+  }
+}

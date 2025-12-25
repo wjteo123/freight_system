@@ -1,0 +1,110 @@
+.register-shell {
+  min-height: 100vh;
+  background: var(--sand-50);
+  padding: 60px clamp(24px, 8vw, 120px);
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+}
+
+.register-content {
+  background: var(--panel-gradient);
+  border-radius: 32px;
+  padding: clamp(32px, 6vw, 56px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.register-form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.error-callout,
+.success-callout {
+  margin: 12px 0;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+.error-callout {
+  border: 1px solid rgba(199, 76, 44, 0.3);
+  background: rgba(199, 76, 44, 0.08);
+  color: var(--rust-600);
+}
+
+.success-callout {
+  border: 1px solid rgba(67, 196, 176, 0.4);
+  background: rgba(67, 196, 176, 0.12);
+  color: #1f7e72;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.register-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+.register-form input,
+.register-form select {
+  border: 1px solid rgba(15, 20, 25, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+.register-panel {
+  background: linear-gradient(150deg, #13293d, #1f3f5b 60%, #2f5871);
+  border-radius: 32px;
+  padding: 40px;
+  color: #f5f5f1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 25px 55px rgba(9, 16, 28, 0.55);
+}
+
+.register-panel__stat {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.register-panel__stat h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.register-panel__stat p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.register-panel__stat small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1024px) {
+  .register-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .register-panel {
+    order: -1;
+  }
+}

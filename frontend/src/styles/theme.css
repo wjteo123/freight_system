@@ -1,0 +1,32 @@
+:root {
+  --sand-50: #f9f6f1;
+  --sand-100: #f2e9dd;
+  --sand-300: #dfcdb5;
+  --rust-500: #c74c2c;
+  --rust-600: #9f3b20;
+  --deep-blue: #13293d;
+  --night: #0b1724;
+  --text-primary: #0f1419;
+  --text-muted: #6b6f76;
+  --accent-amber: #f5a524;
+  --mint: #43c4b0;
+  --shell-gradient: #ffffff;
+  --panel-gradient: linear-gradient(135deg, #ffffff, #ffffff);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --shadow-soft: 0 20px 45px rgba(15, 20, 25, 0.1);
+  --shadow-card: 0 8px 24px rgba(19, 41, 61, 0.12);
+}
+
+:root.dark {
+  --sand-50: #0e121a;
+  --sand-100: #1a212e;
+  --text-primary: #f8f5f1;
+  --text-muted: #9aa6b2;
+  --panel-gradient: linear-gradient(135deg, rgba(19, 25, 34, 0.95), rgba(9, 15, 25, 0.95));
+  --shell-gradient: radial-gradient(circle at top, rgba(19, 25, 34, 0.92), rgba(9, 15, 25, 0.98));
+}
+
+body[data-theme="dark"] {
+  background: var(--shell-gradient);
+  color: var(--text-primary);
+}

@@ -44,5 +44,5 @@ async def upload_file(
     except Exception as exc:  
         raise HTTPException(status_code=500, detail=f"Failed to save file: {exc}")
 
-    url_path = f"/uploads/{safe_name}"
+    url_path = f"{config.API_PREFIX}/uploads/{safe_name}"
     return {"url": url_path, "filename": safe_name, "content_type": file.content_type}

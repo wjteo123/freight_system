@@ -20,6 +20,7 @@ app = FastAPI(title="TNT Freight Management System")
 origins = [
     "http://localhost:3000", # React default port
     "http://localhost:5173", # Vite default port
+    "http://192.168.0.53",   # Deployed host
 ]
 
 app.add_middleware(
@@ -31,21 +32,21 @@ app.add_middleware(
 )
 
 # Include Routers
-app.include_router(auth.router)
-app.include_router(shipments.router)
-app.include_router(uploads.router)
+app.include_router(auth.router, prefix=config.API_PREFIX)
+app.include_router(shipments.router, prefix=config.API_PREFIX)
+app.include_router(uploads.router, prefix=config.API_PREFIX)
 
 # Static uploads
 upload_dir = Path(config.UPLOAD_DIR).resolve()
 upload_dir.mkdir(parents=True, exist_ok=True)
-app.mount("/uploads", StaticFiles(directory=str(upload_dir)), name="uploads")
+app.mount(f"{config.API_PREFIX}/uploads", StaticFiles(directory=str(upload_dir)), name="uploads")
 
 @app.get("/")
 def read_root():
     return {"message": "Freight System API is running"}
 
 
-@app.get("/stream/shipments")
+@app.get(f"{config.API_PREFIX}/stream/shipments")
 async def shipments_stream(request: Request):
     token = request.query_params.get("token")
     if not token:

@@ -1,4 +1,4 @@
-const DEFAULT_STREAM_URL = "http://127.0.0.1:8000/stream/shipments";
+const DEFAULT_STREAM_URL = "http://127.0.0.1:8000/api/stream/shipments";
 
 function resolveStreamUrl() {
   if (import.meta.env.VITE_STREAM_URL) {
@@ -7,8 +7,9 @@ function resolveStreamUrl() {
   if (typeof window !== "undefined") {
     const protocol = window.location.protocol === "https:" ? "https" : "http";
     const host = window.location.hostname;
-    const port = import.meta.env.VITE_BACKEND_PORT || "8000";
-    return `${protocol}://${host}:${port}/stream/shipments`;
+    const port = import.meta.env.VITE_BACKEND_PORT || window.location.port || (protocol === "https" ? "443" : "80");
+    const portSegment = port ? `:${port}` : "";
+    return `${protocol}://${host}${portSegment}/api/stream/shipments`;
   }
   return DEFAULT_STREAM_URL;
 }
